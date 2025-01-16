@@ -1,14 +1,13 @@
+const divide = require('./divide').divide;
+
 function sumDinamically(numbers) {
-  let total = 0;
-  
-  for (let i = 0; i < numbers.length; i += 1) {
-    total += numbers[i];
-  }
+  const total = numbers.reduce((acc, curr) => acc + curr, 0);
 
   return total;
 }
 
 const numbers = [1, 2, 3, 45, 56, 88, 7, 9];
 
+const total = sumDinamically(numbers);
 
-console.log({ total: sumDinamically(numbers) });
+console.log({ total, divisao: divide(total, 11) });
